@@ -7,7 +7,6 @@ import './styles.css'
 
 const CheckoutSideMenu = () => {
     const context = useContext(ShoppingCartContext)
-    console.log('Cart:' , context.cartProducts )
     return(
         <aside className={`${context.isCheckoutSideMenuOpen ? 'flex' : 'hidden'} checkout-side-menu flex flex-col fixed right-0 border border-black rounded-lg bg-white`}>
             <div className='flex justify-between items-center p-6'>
@@ -18,7 +17,7 @@ const CheckoutSideMenu = () => {
                     onClick={()=> context.closeCheckoutSideMenu()}/>
                 </div>
             </div >
-            <div className='px-6 py-2'>
+            <div className='px-6 overflow-y-scroll'>
                 {
                     context.cartProducts.map(product => (
                         <OrderCard
