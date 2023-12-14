@@ -7,7 +7,6 @@ import { Link } from "react-router-dom"
 
 function MyOrdes() {
   const context = useContext(ShoppingCartContext)
-  console.log(context.order)
 
     return ( 
       <Layout>
